@@ -3,8 +3,8 @@
 ## How to build
 
 This project can be build by executing the following:
-```make .merlin
-make```
+``` make .merlin
+make ```
   
 ## How to run
 
