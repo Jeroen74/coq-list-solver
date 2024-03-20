@@ -1,0 +1,6 @@
+(library
+ (name mycc_plugin)
+ (public_name mycc.plugin)
+ (libraries coq-core.plugins.ltac coq.plugins.cc coq.plugins.extraction))
+
+(coq.pp (modules g_mycc))

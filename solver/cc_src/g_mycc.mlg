@@ -1,0 +1,29 @@
+(************************************************************************)
+(*         *   The Coq Proof Assistant / The Coq Development Team       *)
+(*  v      *         Copyright INRIA, CNRS and contributors             *)
+(* <O___,, * (see version control and CREDITS file for authors & dates) *)
+(*   \VV/  **************************************************************)
+(*    //   *    This file is distributed under the terms of the         *)
+(*         *     GNU Lesser General Public License Version 2.1          *)
+(*         *     (see LICENSE file for the text of the license)         *)
+(************************************************************************)
+
+{
+
+open Ltac_plugin
+open Mycctac
+open Stdarg
+open Extraargs
+
+}
+
+DECLARE PLUGIN "mycc-plugin.mycc"
+
+(* Tactic registration *)
+
+TACTIC EXTEND cc
+| [ "or_congruence_eq" natural_opt(n) ident(h) constr(e) ] ->
+   { or_congruence_eq (Option.default 1000 n) h e [] }
+| [ "or_congruence_eq" natural_opt(n) ident(h) constr(e) "with" ne_constr_list(l)] ->
+   { or_congruence_eq (Option.default 1000 n) h e l }
+END

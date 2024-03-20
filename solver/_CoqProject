@@ -1,0 +1,34 @@
+cc_src/META.mycc-plugin
+-Q solvers/ CoqListSolver
+-R benchmarks/ benchmarks
+-I cc_src/
+
+# From Iris: We sometimes want to locally override notation, and there is no good way to do that with scopes.
+-arg -w -arg -notation-overridden
+
+# Allow commands like Restart
+-arg -async-proofs-cache -arg force
+
+# Cannot use non-canonical projections as it causes massive unification failures
+# (https://github.com/coq/coq/issues/6294).
+-arg -w -arg -redundant-canonical-projection
+
+solvers/definitions.v
+solvers/length_normal_form.v
+solvers/list_normal_form.v
+solvers/list_solver.v
+solvers/Loader.v
+
+benchmarks/Running_benchmarks_VST_solver.v
+benchmarks/Running_benchmarks_own_solver.v
+
+cc_src/myccalgo.ml
+cc_src/myccalgo.mli
+cc_src/mycctac.ml
+cc_src/mycctac.mli
+cc_src/myccproof.ml
+cc_src/myccproof.mli
+cc_src/top_printers.ml
+cc_src/top_printers.mli
+cc_src/mycc_plugin.mlpack
+cc_src/g_mycc.mlg

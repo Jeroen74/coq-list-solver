@@ -1,0 +1,96 @@
+(VAR x i n m l l1 l2 l3 f)
+(RULES
+
+lt(n, 0) -> false
+lt(0, s(n)) -> true
+lt(s(n), s(m)) -> lt(n, m)
+
+le(s(n), 0) -> false
+le(0, n) -> true
+le(s(n), s(m)) -> le(n, m)
+
+gt(n, m) -> true | le(n, m) -> false
+gt(n, m) -> false | le(n, m) -> true
+
+ge(n, m) -> true | lt(n, m) -> false
+ge(n, m) -> false | lt(n, m) -> true
+
+eq(0,0) -> true
+eq(s(n), 0) -> false
+eq(0, s(n)) -> false
+eq(s(n), s(m)) -> eq(n, m)
+
+minus(0, s(m)) -> 0
+minus(n, 0) -> n
+minus(s(n), s(m)) -> minus(n, m)
+
+min(0,n) -> 0
+min(n,0) -> n
+min(s(n), s(m)) -> min(n, m)
+
+plus(0, n) -> n
+plus(s(n), m) -> plus(n, s(m))
+
+length(nil) -> 0
+length(singleton(x)) -> s(0)
+length(app(l1, l2)) -> plus(length(l1), length(l2))
+length(rev(l)) -> length(l)
+length(map(f, l)) -> length(l)
+length(take(n, l)) -> minus(n, length(l))
+length(drop(n, l)) -> min(length(l), n)
+length(repeat(n, x)) -> n
+
+app(nil, l) -> l
+app(l, nil) -> l
+
+rev(nil) -> nil
+rev(app(l1, l2)) -> app(rev(l2), rev(l1))
+rev(repeat(n, x)) -> repeat(n, x)
+rev(map(f, l)) -> map(f, rev(l))
+
+map(f, nil) -> nil
+map(f, app(l1, l2)) -> app(map(f, l1), map(f, l2))
+map(f, repeat(n, x)) -> repeat(n, f(x))
+
+drop(n, l) -> l | eq(n,0) -> true
+drop(n, l) -> nil | ge(n, length(l)) -> true
+drop(n, app(l1, l2)) -> app(drop(n, l1), drop(min(n, length(l1)), l2))
+drop(n, repeat(m, x)) -> repeat(min(m, n), x)
+drop(n, map(f, l)) -> map(f, drop(n, l))
+drop(n, rev(l)) -> rev(take(min(length(l), n), l))
+
+take(n, l) -> nil | eq(n, 0) -> true
+take(n, l) -> l | ge(n, length(l)) -> true
+take(n, app(l1, l2)) -> app(take(n, l1), take(min(n, length(l1)), l2))
+take(n, repeat(m, x)) -> repeat(minus(n,m), x)
+take(n, map(f, l)) -> map(f, take(n,l))
+take(n, rev(l)) -> rev(drop(min(length(l), n), l))
+take(n, drop(m, l)) -> drop(m, take(plus(n,m), l))
+
+nth(i, nil) -> default
+nth(i, app(l1, l2)) -> nth(i, l1) | lt(i, length(l1)) -> true
+nth(i, app(l1, l2)) -> nth(min(i, length(l1)), l2) | ge(i, length(l1)) -> true
+nth(i, repeat(n,x)) -> x | lt(i,n) -> true
+nth(i, repeat(n,x)) -> default | ge(i, n) -> true
+nth(i, map(f, l)) -> f(nth(i,l)) | lt(i, length(l)) -> true
+nth(i, map(f, l)) -> default | ge(i, length(l)) -> true
+nth(i, rev(l)) -> nth(min(min(length(l), i), s(0)), l) | lt(i, length(l)) -> true
+nth(i, rev(l)) -> default | ge(i, length(l)) -> true
+nth(i, drop(n, l)) -> nth(plus(i, n), l)
+nth(i, take(n, l)) -> nth(i, l) | lt(i, n) -> true
+nth(i, take(n, l)) -> default | ge(i, n) -> true
+
+app(app(l1, l2), l3) -> app(l1, app(l2, l3))
+app(repeat(n, x), repeat(m, x)) -> repeat(plus(n, m), x)
+repeat(s(0), x) -> singleton(x)
+rev(singleton(x)) -> singleton(x)
+map(f, singleton(x)) -> singleton(f(x))
+drop(n, drop(m, l)) -> drop(plus(n, m), l)
+take(n, take(m, l)) -> take(minus(n, m), l)
+singleton(nth(i, l)) -> take(length(l), app(drop(i, l), default))
+update(i, app(l1, l2), x) -> app(update(i, l1, x), l2) | lt(i, length(l1)) -> true
+update(i, app(l1, l2), x) -> app(l1, update(min(i, length(l1)), l2, x)) | ge(i, length(l1)) -> true
+
+update(i, l, x) -> take(length(l), app(app(take(i, l), singleton(x)), drop(s(i), l)))
+
+)

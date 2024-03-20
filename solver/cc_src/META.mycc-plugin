@@ -1,0 +1,11 @@
+package "mycc" (
+    directory = "."
+    version = "dev"
+    description = "A congruence closure tactic plugin"
+    requires = "coq-core.plugins.ltac"
+    archive(byte) = "mycc_plugin.cma"
+    archive(native) = "mycc_plugin.cmxa"
+    plugin(byte) = "mycc_plugin.cma"
+    plugin(native) = "mycc_plugin.cmxs"
+)
+directory = "."
