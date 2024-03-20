@@ -12,7 +12,7 @@ make
 
 To run this project open the CoqIDE with the correct options, to open for example the benchmarks use:
 
-```coqide cc_theories/benchmarks.v  -I cc_src -R cc_theories Mycc```
+```coqide cc_theories/benchmarks.v  -I cc_src```
 
 ## Accepted operators
 
@@ -36,5 +36,7 @@ flip_ends
 
 For lemmas that use nth or update, make sure to provide an Inhabitant in the context, for example with lists of type `list A` do this as:
 
-```Lemma foo {A} {_ : Inhabitant A} :
-   [The lemma]```
+```
+Lemma foo {A} {_ : Inhabitant A} :
+   [The lemma]
+```
