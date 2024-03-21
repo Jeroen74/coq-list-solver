@@ -1,0 +1,13 @@
+(set-logic UFSLIA)
+(define-fun update ((i Int) (s String) (v String)) String
+	(ite (< i 0) (ite (>= i (str.len s)) (str.++ (str.++ (str.substr s 0 i) v) (str.substr s (+ i 1) (- (str.len s) i) )) s) s))
+(declare-fun i () Int)
+(assert (>= i 0))
+(declare-fun x () String)
+(assert (= 1 (str.len x)))
+(declare-fun y () String)
+(assert (= 1 (str.len y)))
+(declare-fun s () String)
+(assert (not (= (update i (update i s x) y ) (update i s y))))
+(check-sat)
+(exit)

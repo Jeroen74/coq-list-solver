@@ -1,0 +1,8 @@
+(set-logic UFSLIA)
+(declare-fun s1 () String)
+(declare-fun s2 () String)
+(assert  (= (str.len (str.++ s1 s2)) 0))
+(assert (not (= (str.len s1) 0)))
+(assert (not (= (str.len s2) 0)))
+(check-sat)
+(exit)

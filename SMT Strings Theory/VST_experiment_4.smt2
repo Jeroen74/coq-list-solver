@@ -1,0 +1,17 @@
+(set-logic UFSLIA)
+(define-fun nth ((i Int) (s String) (default String)) String
+	(ite (>= i (str.len s)) default (str.at s i)))
+(declare-fun d () String)
+(declare-fun i () Int)
+(declare-fun j () Int)
+(declare-fun size () Int)
+(declare-fun al () String)
+(assert (>= i j))
+(assert (< (- i j) (- (- size j) (- (- size j) 1))))
+(assert (= size (str.len al)))
+(assert (not (= 
+	(nth (+ (- i j) (- (- size j) 1)) al d)
+	(nth (- (- (str.len al) i) 1) al d)
+)))
+(check-sat)
+(exit)

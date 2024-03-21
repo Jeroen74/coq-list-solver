@@ -1,0 +1,8 @@
+(set-logic UFSLIA)
+(declare-fun l1 () String)
+(declare-fun l2 () String)
+(declare-fun l3 () String)
+(assert (= (str.++ l1 l3) (str.++ l2 l3)))
+(assert (not (= l1 l2)))
+(check-sat)
+(exit)
