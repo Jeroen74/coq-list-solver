@@ -2,7 +2,7 @@
 
 ## Software requirements
 
-This project was built and tested with CoqIDE version 8.16.1 and OCaml version 4.09.0.
+This project was built and tested with Coq version 8.16.1 and OCaml version 4.09.0.
 
 ## How to build
 
