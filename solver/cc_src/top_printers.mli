@@ -10,6 +10,8 @@
 
 (** Printers for the ocaml toplevel. *)
 
+(* This file is copied from Coq Verson 8.16.1.                          *)
+
 val pp : Pp.t -> unit
 val pP : Pp.t -> unit (* with surrounding box *)
 
