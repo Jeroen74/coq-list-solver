@@ -12,3 +12,4 @@ build: [
   [make ".merlin"]
   [make]
 ]
+install: [make "install"]
