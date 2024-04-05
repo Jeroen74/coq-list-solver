@@ -8,9 +8,9 @@
 (*         *     (see LICENSE file for the text of the license)         *)
 (************************************************************************)
 
-(* This file implements the basic congruence-closure algorithm by *)
-(* Downey, Sethi and Tarjan. *)
-(* Plus some e-matching and constructor handling by P. Corbineau *)
+(* This file is copied from Coq Verson 8.16.1.                          *)
+(* There are functions added to get the infromation from the graph 
+    build by the congruence closure algorithm                           *)
 
 open CErrors
 open Pp
