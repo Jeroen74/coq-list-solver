@@ -2,16 +2,11 @@
 
 ## Software requirements
 
-This project was built and tested with Coq version 8.16.1 and OCaml version 4.09.0.
+This project was built and tested with Coq version 8.16.1, OCaml version 4.09.0 and Merlin. The software is installed with the `opam` package manager.
 
 ## How to build
 
-Clone the repository by the ```git clone``` command.
-
-Navigate to the right direcotry by 
-```
-cd coq-list-solver/solver
-```
+Download the files and navigate to the `coq-list-solver/solver` directory.
 
 First create a new `opam switch` by executing
 
@@ -29,13 +24,12 @@ and
 opam repo add iris-dev https://gitlab.mpi-sws.org/iris/opam.git
 ```
 
-To build the list-solver run
+Install all dependeces with the correct version by running
 ``` 
 opam install ./coq-list-solver.opam
 ```
 
-
-This project can be build by executing the following:
+Then this project can be build by executing the following:
 ```
 make .merlin
 make
