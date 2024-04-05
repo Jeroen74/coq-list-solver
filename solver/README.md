@@ -35,7 +35,8 @@ Then this project can be build by executing the following:
 ```
 make .merlin
 make
-``` *)
+```
+*)
   
 ## How to run
 
