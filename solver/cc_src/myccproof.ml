@@ -8,8 +8,7 @@
 (*         *     (see LICENSE file for the text of the license)         *)
 (************************************************************************)
 
-(* This file uses the (non-compressed) union-find structure to generate *)
-(* proof-trees that will be transformed into proof-terms in cctac.mlg   *)
+(* This file is copied from Coq Verson 8.16.1                          *)
 
 open CErrors
 open Constr
