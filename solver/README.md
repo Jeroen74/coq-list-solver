@@ -29,22 +29,23 @@ Install all dependeces with the correct version by running
 opam install ./coq-list-solver.opam
 ```
 
+(* I think the following can be removed
+
 Then this project can be build by executing the following:
 ```
 make .merlin
 make
-```
+``` *)
   
 ## How to run
 
 To run this project open the CoqIDE with the correct options, to open for example the benchmarks use:
 
-```coqide cc_theories/benchmarks.v  -I cc_src```
+```coqide benchmarks/benchmarks.v```
 
 To be able to use te list solver, load the solver with 
 ```
 From CoqListSolver Require Export list_solver.
-Require Export stdpp.list.
 ```
 
 ## Accepted operators
