@@ -42,7 +42,9 @@ make
 
 To run this project open the CoqIDE with the correct options, to open for example the benchmarks use:
 
-```coqide benchmarks/benchmarks.v```
+```
+coqide benchmarks/benchmarks.v
+```
 
 To be able to use te list solver, load the solver with 
 ```
