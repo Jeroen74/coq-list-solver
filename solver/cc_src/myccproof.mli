@@ -8,6 +8,8 @@
 (*         *     (see LICENSE file for the text of the license)         *)
 (************************************************************************)
 
+(* This file is copied from Coq Verson 8.16.1                          *)
+
 open Myccalgo
 open Constr
 
