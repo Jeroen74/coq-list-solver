@@ -6,6 +6,13 @@ This project was built and tested with Coq version 8.16.1 and OCaml version 4.09
 
 ## How to build
 
+Clone the repository by the ```git clone``` command.
+
+Navigate to the right direcotry by 
+```
+cd coq-list-solver/solver
+```
+
 First create a new `opam switch` by executing
 
 ```
@@ -16,11 +23,16 @@ Make sure opam can find the required packages
 
 ```
 opam repo add coq-released https://coq.inria.fr/opam/released
+```
+and
+```
 opam repo add iris-dev https://gitlab.mpi-sws.org/iris/opam.git
 ```
 
 To build the list-solver run
-``` opam install coq-list-solver```
+``` 
+opam install coq-list-solver
+```
 
 
 This project can be build by executing the following:
