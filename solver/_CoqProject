@@ -13,15 +13,6 @@ cc_src/META.mycc-plugin
 # (https://github.com/coq/coq/issues/6294).
 -arg -w -arg -redundant-canonical-projection
 
-solvers/definitions.v
-solvers/length_normal_form.v
-solvers/list_normal_form.v
-solvers/list_solver.v
-solvers/Loader.v
-
-benchmarks/Running_benchmarks_VST_solver.v
-benchmarks/Running_benchmarks_own_solver.v
-
 cc_src/myccalgo.ml
 cc_src/myccalgo.mli
 cc_src/mycctac.ml
@@ -32,3 +23,12 @@ cc_src/top_printers.ml
 cc_src/top_printers.mli
 cc_src/mycc_plugin.mlpack
 cc_src/g_mycc.mlg
+
+solvers/definitions.v
+solvers/length_normal_form.v
+solvers/list_normal_form.v
+solvers/list_solver.v
+solvers/Loader.v
+
+benchmarks/Running_benchmarks_VST_solver.v
+benchmarks/Running_benchmarks_own_solver.v
