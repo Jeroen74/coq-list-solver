@@ -31,7 +31,7 @@ opam repo add iris-dev https://gitlab.mpi-sws.org/iris/opam.git
 
 To build the list-solver run
 ``` 
-opam install coq-list-solver
+opam install ./coq-list-solver.opam
 ```
 
 
