@@ -10,6 +10,10 @@
 
 (* This file is the interface between the c-c algorithm and Coq *)
 
+(* This file is copied from Coq Verson 8.16.1.                          *)
+(* There are functions added to get the infromation from the graph 
+    build by the congruence closure algorithm                           *)
+
 open Names
 open Inductiveops
 open Declarations
