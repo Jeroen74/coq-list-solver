@@ -33,7 +33,6 @@ map
 nth_l
 update
 flip_ends
-
 ```
 
 ## Provide a Inhabitant
