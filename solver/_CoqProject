@@ -30,5 +30,5 @@ solvers/list_normal_form.v
 solvers/list_solver.v
 solvers/Loader.v
 
-benchmarks/Running_benchmarks_VST_solver.v
+# benchmarks/Running_benchmarks_VST_solver.v
 benchmarks/Running_benchmarks_own_solver.v
