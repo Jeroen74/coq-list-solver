@@ -51,6 +51,10 @@ To be able to use te list solver, load the solver with
 From CoqListSolver Require Export list_solver.
 ```
 
+## Run the benchmarks against VST's solver
+
+TODO
+
 ## Accepted operators
 
 Here we provide a list of operators that is accepted by our solver. To check the type, please use the Coq's `Check` command
