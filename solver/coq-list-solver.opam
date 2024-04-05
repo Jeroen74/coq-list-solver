@@ -1,4 +1,4 @@
-opam-version: "2.1.2"
+opam-version: "2.0"
 name: "coq-list-solver"
 version: "dev"
 synopsis: "A list solver for Coq"
