@@ -9,8 +9,3 @@ depends: [
   "coqide" { >= "8.16.1" & <= "8.16.1" }
   "merlin"
 ]
-build: [
-  [make ".merlin"]
-  [make]
-]
-install: [make "install"]
