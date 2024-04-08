@@ -29,7 +29,3 @@ solvers/length_normal_form.v
 solvers/list_normal_form.v
 solvers/list_solver.v
 solvers/Loader.v
-solver/build.v
-
-# benchmarks/Running_benchmarks_VST_solver.v
-# benchmarks/Running_benchmarks_own_solver.v
