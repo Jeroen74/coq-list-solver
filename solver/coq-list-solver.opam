@@ -10,7 +10,6 @@ depends: [
   "merlin"
 ]
 build: [
-  [make ".merlin"]
   [make]
 ]
 install: [make "install"]
