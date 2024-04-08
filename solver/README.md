@@ -14,29 +14,39 @@ First create a new `opam switch` by executing
 opam switch create coq-list-solver 4.09.0
 ```
 
-Make sure opam can find the required packages
+Make sure opam can find the required packages for Coq
 
 ```
 opam repo add coq-released https://coq.inria.fr/opam/released
 ```
-and
+
+Install the correct version of Coq
+```
+opam install coqide=8.16.1
+```
+
+Make sure opam can find the required package for Iris
 ```
 opam repo add iris-dev https://gitlab.mpi-sws.org/iris/opam.git
 ```
 
-Install all dependeces with the correct version by running
-``` 
-opam install ./coq-list-solver.opam
+Install the correct version of Iris
+```
+opam install coq-iris=dev.2023-04-12.0.958aad09
 ```
 
-(* I think the following can be removed
+Install merlin
+```
+opam install merlin
+```
 
 Then this project can be build by executing the following:
 ```
 make .merlin
+```
+```
 make
 ```
-*)
   
 ## How to run
 
