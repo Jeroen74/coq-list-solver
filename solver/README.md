@@ -63,7 +63,10 @@ From CoqListSolver Require Export list_solver.
 
 ## Run the benchmarks against VST's solver
 
-TODO
+When you want to run the benchmarks agains the VST's solver, make sure you have installed the solver by running:
+```
+opam pin coq-vst-zlist https://github.com/PrincetonUniversity/VST.git
+```
 
 ## Accepted operators
 
