@@ -2,11 +2,10 @@
 
 ## Software requirements
 
-This project was built and tested with Coq version 8.16.1, OCaml version 4.09.0 and Merlin. The software is installed with the `opam` package manager.
+This project was built and tested with OCaml version 4.09.0, Coq version 8.16.1, Iris version dev.2023-04-12.0.958aad09 and Merlin. The software is installed with the `opam` package manager.
 
 ## How to build
-
-Download the files and navigate to the `coq-list-solver/solver` directory.
+Make sure you have installed opam.
 
 First create a new `opam switch` by executing
 
@@ -40,6 +39,7 @@ Install merlin
 opam install merlin
 ```
 
+Download the files and navigate to the `coq-list-solver/solver` directory.
 Then this project can be build by executing the following:
 ```
 make .merlin
@@ -67,6 +67,8 @@ When you want to run the benchmarks agains the VST's solver, make sure you have 
 ```
 opam pin coq-vst-zlist https://github.com/PrincetonUniversity/VST.git
 ```
+
+Also make sure you have installed Iris's stdpp, by installing Iris via the instructions of the 'How to build' section.
 
 ## Accepted operators
 
